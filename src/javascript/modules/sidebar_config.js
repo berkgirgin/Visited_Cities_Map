@@ -92,6 +92,7 @@ export const easternEurope = [
 
 // Balkans
 // *******
+
 const hungary = CreateCountry("Hungary", ["Budapest"]);
 const slovenia = CreateCountry("Slovenia", ["Ljubljana"]);
 const croatia = CreateCountry("Croatia", ["Zagreb"]);
@@ -101,19 +102,18 @@ const macedonia = CreateCountry("Macedonia", ["Skopje", "Ohrid"]);
 const greece = CreateCountry("Greece", greeceCities);
 
 export const balkans = [
-  hungary,
-  slovenia,
-  croatia,
-  serbia,
-  kosovo,
-  macedonia,
   greece,
+  macedonia,
+  kosovo,
+  serbia,
+  croatia,
+  slovenia,
+  hungary,
 ];
 // *******
 
 // Asia
 // ****
-
 const china = CreateCountry("China", ["Beijing", "Shanghai"]);
 export const asia = [china];
 // ****

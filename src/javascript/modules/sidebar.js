@@ -5,6 +5,11 @@ import {
   asia,
 } from "./sidebar_config.js";
 
+import { ImageSRC } from "./carousel_config.js";
+import { createCityImages } from "../index.js";
+
+const getImageSRC = new ImageSRC();
+
 export function SidebarDOM() {
   const sidebarMainContainer = document.querySelector(
     ".sidebar_main_container"
@@ -80,6 +85,23 @@ export function SidebarDOM() {
           newButtonCity.classList.add(countriesArray[i].citiesList[j]);
           newButtonCity.innerHTML = `${countriesArray[i].citiesList[j]}`;
           newCity.appendChild(newButtonCity);
+
+          newButtonCity.addEventListener("click", () => {
+            const cityName = document.querySelector(".carousel > .city_name");
+            cityName.innerHTML = "";
+
+            let nameForImageList =
+              countriesArray[i].citiesList[j].toLowerCase();
+            let imageListName = nameForImageList + "ImagesList";
+
+            if (getImageSRC[imageListName] != undefined) {
+              createCityImages(getImageSRC[imageListName]);
+            } else {
+              createCityImages(getImageSRC.defaultImagesList);
+            }
+
+            cityName.innerHTML = countriesArray[i].citiesList[j];
+          });
         }
       }
     }
@@ -143,6 +165,7 @@ export function SidebarDOM() {
     createCountryCategory("Eastern Europe", easternEurope);
     createCountryCategory("Balkans", balkans);
     createCountryCategory("Asia", asia);
+
     addSidebarEventListeners();
   }
 

@@ -6,6 +6,7 @@ module.exports = {
     index: "./src/javascript/index.js",
     sidebar: "./src/javascript/modules/sidebar.js",
     sidebarConfig: "./src/javascript/modules/sidebar_config.js",
+    carouselConfig: "./src/javascript/modules/carousel_config.js",
   },
   mode: "development",
   output: {

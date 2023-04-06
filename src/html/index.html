@@ -7,14 +7,52 @@
     <title>Visited Countries and Cities</title>
   </head>
   <body>
+    <audio
+      src="../assets/audio/voodoo-like-you-do---huma-huma.mp3"
+      loop
+    ></audio>
+
     <div class="main_container">
       <header class="header_main_container">
-        <h2>Visited Countries and Cities, welcome!</h2>
+        <div class="header_left">
+          <div>My Personal Travel Log</div>
+        </div>
+        <div class="header_right">
+          <button class="button audio_button">
+            <img
+              src="../assets/images/audio_off.png"
+              alt="sound_icon"
+              class="icon icon_off"
+            />
+            <img
+              src="../assets/images/audio_on.png"
+              alt="sound_icon"
+              class="icon icon_on"
+            />
+          </button>
+        </div>
       </header>
       <div class="sidebar_main_container">
-        <div>Select your city!</div>
+        <div class="top_block">
+          <img src="../assets/images/flixbus_icon.png" alt="flixbus" />
+          <div>&#8681;Select your city&#8681;</div>
+        </div>
       </div>
-      <div class="content_main_container"></div>
+      <div class="content_main_container">
+        <div class="carousel">
+          <div class="city_name">City Name comes here</div>
+          <div class="image_main_container">
+            <button class="skip_left">
+              <i class="arrow arrow_skip_left"></i>
+            </button>
+            <div class="image_container"></div>
+            <button class="skip_right">
+              <i class="arrow arrow_skip_right"></i>
+            </button>
+          </div>
+          <div class="image_counter"></div>
+        </div>
+      </div>
       <footer></footer>
     </div>
   </body>
