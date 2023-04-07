@@ -6,7 +6,12 @@ import {
 } from "./sidebar_config.js";
 
 import { ImageSRC, citiesWithImages } from "./carousel_config.js";
-import { createCityImages } from "../index.js";
+import {
+  createCityImages,
+  startAutoSlide,
+  stopAutoSlide,
+  resetImageIndex,
+} from "../index.js";
 
 const getImageSRC = new ImageSRC();
 
@@ -111,6 +116,9 @@ export function SidebarDOM() {
             }
 
             cityName.innerHTML = countriesArray[i].citiesList[j];
+            stopAutoSlide();
+            resetImageIndex();
+            startAutoSlide();
           });
         }
       }

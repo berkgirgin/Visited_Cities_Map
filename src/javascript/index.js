@@ -28,6 +28,9 @@ const imageCounter = document.querySelector(".image_counter");
 // ***********************
 
 let imageIndex = 0;
+export function resetImageIndex() {
+  imageIndex = 0;
+}
 
 function slideImage(right_or_left) {
   if (right_or_left === "left") {
@@ -72,10 +75,10 @@ let autoSlideInterval = setInterval(autoSlide, 8000);
 function autoSlide() {
   slideImage("right");
 }
-function stopAutoSlide() {
+export function stopAutoSlide() {
   clearInterval(autoSlideInterval);
 }
-function startAutoSlide() {
+export function startAutoSlide() {
   autoSlideInterval = setInterval(autoSlide, 8000);
 }
 
@@ -100,6 +103,8 @@ let defaultImagesList = getImageSRC.defaultImagesList;
 export function createCityImages(images_list) {
   imageContainer.innerHTML = "";
   imageCounter.innerHTML = "";
+  // imageIndex = 0;
+  // startAutoSlide();
 
   for (let i = 0; i < images_list.length; i++) {
     const newImage = document.createElement("img");
