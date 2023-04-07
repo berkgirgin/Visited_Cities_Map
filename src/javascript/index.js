@@ -81,9 +81,11 @@ function startAutoSlide() {
 
 carousel.addEventListener("mouseover", () => {
   stopAutoSlide();
+  carousel.classList.add("hovered_carousel");
 });
 carousel.addEventListener("mouseleave", () => {
   startAutoSlide();
+  carousel.classList.remove("hovered_carousel");
 });
 
 // *****************
