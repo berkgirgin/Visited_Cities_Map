@@ -164,9 +164,7 @@ export function SidebarDOM() {
         const subMenuCountry = country.querySelector(".sub_menu_country");
         const arrowIconCountry = extendCountryButton.querySelector(".arrow");
 
-        extendCountryButton.addEventListener("click", (event) => {
-          console.log(event.target);
-
+        extendCountryButton.addEventListener("click", () => {
           subMenuCountry.classList.toggle("active");
           arrowIconCountry.classList.toggle("active");
         });

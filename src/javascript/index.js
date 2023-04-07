@@ -67,16 +67,16 @@ function slideImage(right_or_left) {
 
 // *****************
 // adding auto slide
-let autoSlideInterval = setInterval(autoSlide, 7000);
+let autoSlideInterval = setInterval(autoSlide, 8000);
 
 function autoSlide() {
-  // slideImage("right");
+  slideImage("right");
 }
 function stopAutoSlide() {
   clearInterval(autoSlideInterval);
 }
 function startAutoSlide() {
-  autoSlideInterval = setInterval(autoSlide, 7000);
+  autoSlideInterval = setInterval(autoSlide, 8000);
 }
 
 carousel.addEventListener("mouseover", () => {

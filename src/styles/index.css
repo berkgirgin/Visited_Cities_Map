@@ -93,7 +93,6 @@
   --hover-color-default: #d6d3d1;
   --border_color_grey: #858585;
   --border_radius: 10px;
-  --form_border: 2px var(--border_color_grey) solid;
 
   --sidebar_icon_gap: 0.2rem;
   --sidebar_item_animation_duration: 2s;
@@ -108,7 +107,6 @@
 body {
   background-color: grey;
 
-  color: var(wh);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -131,17 +129,6 @@ body {
     "sidebar header"
     "sidebar main"
     "footer footer";
-  /* gap: var(--main_container_gap); */
-}
-
-.main_container > .header_main_container,
-.main_container > .sidebar_main_container,
-.main_container > .content_main_container {
-  /* padding: 1rem; */
-  /* border: 4px orange solid; */
-}
-.main_container > footer {
-  /* border: 4px orange solid; */
 }
 
 .header_main_container {
@@ -169,8 +156,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: var(--main_containers_padding);
-
-  /* background-color: black; */
 }
 
 .header_left {
@@ -179,10 +164,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header_right {
-  /* align-self: center; */
 }
 
 .header_left div {
@@ -221,7 +202,6 @@ footer {
   align-items: center;
   gap: 1rem;
   padding: var(--main_containers_padding);
-  /* max-width: 8rem; */
   background-color: var(--background-color-sidebar-grey);
   font-family: TravelJournal;
 }
@@ -229,8 +209,6 @@ footer {
 ul,
 li {
   list-style-type: none;
-  /* padding: 0rem; */
-  /* padding-left: 0.5rem; */
   margin: 0;
   padding-left: 0.5rem;
 }
@@ -362,10 +340,7 @@ li {
   width: 0.6rem;
   height: 0.6rem;
   pointer-events: none;
-  /* to remove below line */
-  border: solid black;
   border-width: 0 9px 9px 0;
-  /* to remove above line */
   margin-left: 0.3rem;
   transform: rotate(135deg);
 }
@@ -374,28 +349,20 @@ li {
   width: 0.6rem;
   height: 0.6rem;
   pointer-events: none;
-  /* to remove below line */
-  border: solid black;
   border-width: 0 9px 9px 0;
-  /* to remove above line */
-
   margin-right: 0.3rem;
   transform: rotate(-45deg);
 }
 
 button {
   cursor: pointer;
-  /* background-color: var(--add_button_blue_background); */
-  /* background-color: transparent; */
   border-radius: var(--border_radius);
   border: none;
   box-shadow: inset 0 0 0.2rem black;
   font-family: Georgia, Times, "Times New Roman", serif;
-  /* font-family: Travel; */
 }
 button:hover {
   transform: scale(1.1);
-  /* background-color: var(--add_button_blue_background_ligther); */
 }
 
 button.extend_country_category,
@@ -434,10 +401,6 @@ button.extend_country {
   padding: 0 15vh;
   padding-top: 0.2rem;
   margin-bottom: 2rem;
-  /* padding-top: calc(0.3rem + 1vw);
-  padding-bottom: 0; */
-
-  /* background-color: #1e3a8a; */
 }
 
 .carousel {
@@ -492,14 +455,13 @@ button.extend_country {
   background-color: black;
   border-radius: 18px;
   border: 0.7rem solid var(--neutral-black);
-  /* width: auto; */
-  /* aspect-ratio: 1920/1080; */
 
   aspect-ratio: 16/9;
   max-height: 70vh;
 
   display: flex;
   overflow: hidden;
+  box-shadow: inset 0 0 1rem var(--flixbus-orange);
 }
 
 .image_main_container .image_container img {
@@ -508,6 +470,7 @@ button.extend_country {
   min-height: 100%;
   min-width: 100%;
   /* add box shadow */
+
   object-fit: cover;
 
   display: none;
