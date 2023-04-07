@@ -115,6 +115,12 @@ export function createCityImages(images_list) {
 
     if (images_list.length <= 1) {
       newImageCounterCircle.setAttribute("style", "opacity: 0;");
+      let selectedImage = document.querySelector(
+        ".image_main_container .image_container img"
+      );
+      selectedImage.classList.add("static_image");
+
+      // selectedImage.setAttribute("style", "animation: none; opacity: 1;");
     }
     if (i === 0 && images_list.length > 1) {
       newImageCounterCircle.classList.add("active_image");
@@ -124,7 +130,7 @@ export function createCityImages(images_list) {
 }
 
 createCityImages(defaultImagesList);
-cityName.innerHTML = "Only some cities have photos :(";
+cityName.innerHTML = "&#8656; Check the cities!! &#8656;";
 // ***************************************
 // ***************************************
 

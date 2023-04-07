@@ -5,7 +5,7 @@ import {
   asia,
 } from "./sidebar_config.js";
 
-import { ImageSRC } from "./carousel_config.js";
+import { ImageSRC, citiesWithImages } from "./carousel_config.js";
 import { createCityImages } from "../index.js";
 
 const getImageSRC = new ImageSRC();
@@ -82,7 +82,17 @@ export function SidebarDOM() {
 
           const newButtonCity = document.createElement("button");
           newButtonCity.classList.add("city_button");
-          newButtonCity.classList.add(countriesArray[i].citiesList[j]);
+          newButtonCity.classList.add(
+            countriesArray[i].citiesList[j].toLowerCase()
+          );
+
+          if (
+            citiesWithImages.includes(
+              countriesArray[i].citiesList[j].toLowerCase()
+            )
+          ) {
+            newButtonCity.classList.add("available_city");
+          }
           newButtonCity.innerHTML = `${countriesArray[i].citiesList[j]}`;
           newCity.appendChild(newButtonCity);
 
@@ -114,6 +124,7 @@ export function SidebarDOM() {
       extendCountryCategoryButtons.forEach((extendCountryCategoryButton) => {
         const countryCategory =
           extendCountryCategoryButton.parentNode.parentNode;
+        const mainMenuCountryCategory = extendCountryCategoryButton.parentNode;
         const subMenuCountryCategory = countryCategory.querySelector(
           ".sub_menu_country_category"
         );
@@ -128,6 +139,7 @@ export function SidebarDOM() {
           countryCategory.querySelectorAll(".sub_menu_country");
 
         extendCountryCategoryButton.addEventListener("click", () => {
+          mainMenuCountryCategory.classList.toggle("active");
           subMenuCountryCategory.classList.toggle("active");
           arrowIconCountryCategory.classList.toggle("active");
           if (!subMenuCountryCategory.classList.contains("active")) {
@@ -161,10 +173,10 @@ export function SidebarDOM() {
       });
     }
 
-    createCountryCategory("Western Europe", westernEurope);
-    createCountryCategory("Eastern Europe", easternEurope);
-    createCountryCategory("Balkans", balkans);
-    createCountryCategory("Asia", asia);
+    createCountryCategory("&nbsp;Western Europe", westernEurope);
+    createCountryCategory("&nbsp;Eastern Europe", easternEurope);
+    createCountryCategory("&nbsp;Balkans", balkans);
+    createCountryCategory("&nbsp;Asia", asia);
 
     addSidebarEventListeners();
   }
