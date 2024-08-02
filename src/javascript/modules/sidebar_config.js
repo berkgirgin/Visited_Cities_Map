@@ -100,9 +100,20 @@ const serbia = CreateCountry("Serbia", ["Belgrade", "Nis"]);
 const kosovo = CreateCountry("Kosovo", ["Pristina"]);
 const macedonia = CreateCountry("Macedonia", ["Skopje", "Ohrid"]);
 const greece = CreateCountry("Greece", greeceCities);
+const albania = CreateCountry("Albania", ["Tirana", "Sarande"]);
+const bulgaria = CreateCountry("Bulgaria", ["Sofia"]);
+const montenegro = CreateCountry("Montenegro", [
+  "Podgorica",
+  "Budva",
+  "Kotor",
+  "Perast",
+]);
 
 export const balkans = [
   greece,
+  albania,
+  montenegro,
+  bulgaria,
   macedonia,
   kosovo,
   serbia,
